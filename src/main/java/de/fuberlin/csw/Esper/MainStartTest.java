@@ -17,7 +17,7 @@ public class MainStartTest {
 	static String query2 = "select * from pattern[every (A = MessageEvent(name = 'a'))]";
 
 
-	static String query3 = "select name, name1 from MessageEvent.win:length(5) where (name='a')";
+	static String query3 = "select name from MessageEvent.win:length(5) where (name='a')";
 
 	static String query4 =	"select * from MessageEvent.win:time(60) as m1, MessageEvent.win:time(60) as m2 where m1.name  = m2.name";
 	static String query5 =	"select * from MessageEvent.win:length(5) as m1, MessageEvent.win:length(5) as m2 where m1.name  = m2.name";
