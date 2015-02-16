@@ -8,8 +8,7 @@ import de.fuberlin.csw.Esper.event.EventListener;
 
 /**
  * 
- * @author Kia A test class for starting different Esper queries on example RDF
- *         stream for demonstration purposes.
+ * @author Kia A test class for starting different Esper queries for demonstration purposes.
  */
 public class MainStartTest {
 
@@ -20,7 +19,7 @@ public class MainStartTest {
 
 	static String query3 = "select name, name1 from MessageEvent.win:length(5) where (name='a')";
 
-	static String query4 =	"select * from MessageEvent.win:time(10) as m1, MessageEvent.win:time(10) as m2 where m1.name  = m2.name";
+	static String query4 =	"select * from MessageEvent.win:time(60) as m1, MessageEvent.win:time(60) as m2 where m1.name  = m2.name";
 	static String query5 =	"select * from MessageEvent.win:length(5) as m1, MessageEvent.win:length(5) as m2 where m1.name  = m2.name";
 
 	
@@ -31,7 +30,7 @@ public class MainStartTest {
 		EsperEventProcessor ep = new EsperEventProcessor();
 		EventListener my_listener = new EventListener();
 
-		ep.addPattern(query5, my_listener);
+		ep.addPattern(query4, my_listener);
 		ep.start();
 
 	}
